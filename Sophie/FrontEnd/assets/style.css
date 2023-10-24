@@ -129,10 +129,11 @@ table {
 }
 /** end reset css**/
 body {
-  max-width: 1140px;
-  margin: auto;
+  max-width: 1440px;
+  margin: 0 auto;
   font-family: "Work Sans";
   font-size: 14px;
+  background-color: #fffef8;
 }
 header {
   display: flex;
@@ -216,7 +217,7 @@ li:hover {
   width: 100%;
 }
 #contact {
-  width: 50%;
+  width: 33%;
   margin: auto;
 }
 #contact > * {
@@ -275,8 +276,19 @@ button {
   border-radius: 60px;
   border: solid 1px #1d6154;
 }
-footer nav ul {
+footer {
+  background-color: white;
   display: flex;
   justify-content: flex-end;
-  margin: 2em;
+  padding: 2em;
+  height: 100%;
+  margin-top: 10em;
+}
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+form a {
+  display: flex;
+  justify-content: center;
 }
