@@ -1,10 +1,10 @@
 import { creerFiltres, afficherWorks } from "./functions.js"
 
 //Recuperation depuis l'api//
-var works = fetch('http://localhost:5678/api/works')
+let works = fetch('http://localhost:5678/api/works')
             .then(works => works.json())
 
-var categories = fetch('http://localhost:5678/api/categories')
+let categories = fetch('http://localhost:5678/api/categories')
             .then(categories => categories.json())            
 
 //Creation des projets dans le Dom//

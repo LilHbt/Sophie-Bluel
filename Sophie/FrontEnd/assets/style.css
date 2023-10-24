@@ -266,15 +266,19 @@ button {
   cursor: pointer;
   font-family: "Syne";
   font-weight: 700;
-  color: white;
-  background-color: #1d6154;
+  color: #1d6154;
+  background-color: #fffef8;
   margin: 2em auto;
   padding: 5px;
   height: 50px;
   width: 150px;
   text-align: center;
   border-radius: 60px;
-  border: solid 1px #1d6154;
+  border: solid 3px #1d6154;
+}
+.selected {
+  color: white;
+  background-color: #1d6154;
 }
 footer {
   background-color: white;

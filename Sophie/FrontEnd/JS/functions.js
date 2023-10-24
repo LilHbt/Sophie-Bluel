@@ -28,14 +28,24 @@ function listenerButtons(){
 let  buttons= document.querySelectorAll('.filtres button')
     for(let i=0; i < buttons.length; i ++){
         buttons[i].addEventListener('click', event =>{
-            var categoryId = event.target.id;
-           filtrerWorks(categoryId)
+            let categoryId = event.target.id;
+            filtrerWorks(categoryId)
+            //Modification des boutons de filtre au clic//
+            let buttonActive=buttons[i]
+            buttonActive.classList.add('selected')
+            let buttonsArray= Array.prototype.slice.call(buttons)
+            let buttonInactive= buttonsArray.filter(buttonsArray=>buttonsArray!==buttons[i])
+            buttonInactive.forEach(buttons => {
+                buttons.classList.remove('selected')
+            });
+            
     })
  }}
+//fonction pour filtrer les projets//
  function filtrerWorks(categoryId){
     let work  = fetch('http://localhost:5678/api/works').then(work=>work.json()) 
     work.then(work=> {
-    var workFiltre = work.filter(work => work.categoryId == categoryId)
+    let workFiltre = work.filter(work => work.categoryId == categoryId)
     document.querySelector('.gallery').innerHTML=''
     if (categoryId=== 'reset'){
         afficherWorks(work)
