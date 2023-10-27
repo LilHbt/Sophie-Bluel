@@ -13,22 +13,29 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
     <script type="module" src="./JS/acceuil.js" defer></script>
+    <script src="./JS/modale.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/6a530c6dff.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header>
-      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-      <nav>
-        <ul>
-          <a href="#portfolio"><li>projets</li></a>
-          <a href="#contact"><li>contact</li></a>
-          <a href="./login.html"><li>login</li></a>
-          <li>
-            <a href="https://www.instagram.com" target="_blank"
-              ><img src="./assets/icons/instagram.png" alt="Instagram"
-            /></a>
-          </li>
-        </ul>
-      </nav>
+    <header id="header" class="header-acceuil">
+      <div class="header-content">
+        <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+        <nav>
+          <ul>
+            <a href="#portfolio"><li>projets</li></a>
+            <a href="#contact"><li>contact</li></a>
+            <a href="./login.html" class="logout"><li class="log">login</li></a>
+            <li>
+              <a href="https://www.instagram.com" target="_blank"
+                ><img src="./assets/icons/instagram.png" alt="Instagram"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section id="introduction">
@@ -55,10 +62,10 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>Mes Projets</h2>
-        <div class="filtres">
-          <button id="reset">Tout</button>
+        <div class="edit">
+          <h2>Mes Projets</h2>
         </div>
+        <div class="filtres"></div>
         <div class="gallery"></div>
       </section>
       <section id="contact">

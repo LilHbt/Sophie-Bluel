@@ -15,13 +15,17 @@ export function afficherWorks(works) {
 
 //fonction pour generer les bouttons de filtre//
 export function creerFiltres(categories) {
+  const zoneButtons = document.querySelector(".filtres");
   for (let i = 0; i < categories.length; i++) {
-    const zoneButtons = document.querySelector(".filtres");
     const buttonFilters = document.createElement("button");
     zoneButtons.appendChild(buttonFilters);
     buttonFilters.innerText = categories[i].name;
     buttonFilters.id = categories[i].id;
   }
+  const buttonReset = document.createElement("button");
+  buttonReset.innerText = "Tout";
+  buttonReset.setAttribute("id", "reset");
+  zoneButtons.appendChild(buttonReset);
   listenerButtons();
 }
 function listenerButtons() {
@@ -58,3 +62,31 @@ function filtrerWorks(categoryId) {
     }
   });
 }
+
+//fonction d'affichage//
+export const modifierAffichage = () => {
+  //modif du bouton login//
+  const btnLogout = document.querySelector(".logout");
+  const log = document.querySelector(".log");
+  log.innerText = "logout";
+  log.addEventListener("click", () => {
+    localStorage.removeItem("token");
+  });
+  btnLogout.href = "index.html";
+  //creation des nouveaux element visuel//
+  //header//
+  let divHeader = document.createElement("div");
+  let header = document.getElementById("header");
+  let headerContent = document.querySelector(".header-content");
+  header.insertBefore(divHeader, headerContent);
+  divHeader.innerHTML = `<i class="fa-regular fa-pen-to-square icon"></i>
+                        <p>Mode Edition</p>`;
+  divHeader.classList.add("header-edit");
+  //projets//
+  let zoneEdit = document.querySelector(".edit");
+  let btnEdit = document.createElement("div");
+  zoneEdit.appendChild(btnEdit);
+  btnEdit.classList.add("btn-edit");
+  btnEdit.innerHTML = `<i class="fa-regular fa-pen-to-square icon"></i>
+                        <p>Modifier</p>`;
+};
