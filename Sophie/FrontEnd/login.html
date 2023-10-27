@@ -33,13 +33,26 @@
     <main>
       <section id="contact">
         <h2>Log In</h2>
-        <form action="#" method="post">
+        <form action="#" method="post" id="form">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            required
+          />
           <label for="password">Mot de Passe</label>
-          <input type="password" name="password" id="password" />
-          <input type="submit" value="Se connecter" />
-          <a href="#">Mot de passe Oublié</a>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="current-password"
+            required
+          />
+          <div class="zone-erreur"></div>
+          <input type="submit" value="Se connecter" id="submit" />
+          <a href="#" class="forgotten">Mot de passe Oublié</a>
         </form>
       </section>
     </main>
