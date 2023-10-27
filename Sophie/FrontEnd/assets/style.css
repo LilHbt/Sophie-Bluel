@@ -276,6 +276,9 @@ button {
   border-radius: 60px;
   border: solid 3px #1d6154;
 }
+#submit {
+  cursor: pointer;
+}
 .selected {
   color: white;
   background-color: #1d6154;
@@ -295,4 +298,16 @@ header a {
 form a {
   display: flex;
   justify-content: center;
+}
+.error {
+  margin: auto;
+  padding: 10px;
+  color: red;
+}
+#contact .input-error {
+  -webkit-box-shadow: 0px 0px 14px 7px rgba(208, 0, 0, 0.73);
+  box-shadow: 0px 0px 14px 7px rgba(208, 0, 0, 0.73);
+}
+.forgotten {
+  color: inherit;
 }
