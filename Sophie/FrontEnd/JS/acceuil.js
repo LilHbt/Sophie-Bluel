@@ -11,7 +11,6 @@ isUserConnected();
 let works = fetch("http://localhost:5678/api/works").then((works) =>
   works.json()
 );
-
 let categories = fetch("http://localhost:5678/api/categories").then(
   (categories) => categories.json()
 );

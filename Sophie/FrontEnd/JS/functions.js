@@ -16,16 +16,17 @@ export function afficherWorks(works) {
 //fonction pour generer les bouttons de filtre//
 export function creerFiltres(categories) {
   const zoneButtons = document.querySelector(".filtres");
+  const buttonReset = document.createElement("button");
+  buttonReset.innerText = "Tout";
+  buttonReset.setAttribute("id", "reset");
+  zoneButtons.appendChild(buttonReset);
   for (let i = 0; i < categories.length; i++) {
     const buttonFilters = document.createElement("button");
     zoneButtons.appendChild(buttonFilters);
     buttonFilters.innerText = categories[i].name;
     buttonFilters.id = categories[i].id;
   }
-  const buttonReset = document.createElement("button");
-  buttonReset.innerText = "Tout";
-  buttonReset.setAttribute("id", "reset");
-  zoneButtons.appendChild(buttonReset);
+
   listenerButtons();
 }
 function listenerButtons() {
@@ -82,7 +83,7 @@ export const modifierAffichage = () => {
   divHeader.innerHTML = `<i class="fa-regular fa-pen-to-square icon"></i>
                         <p>Mode Edition</p>`;
   divHeader.classList.add("header-edit");
-  //projets//
+  //btn edit projets//
   let zoneEdit = document.querySelector(".edit");
   let btnEdit = document.createElement("div");
   zoneEdit.appendChild(btnEdit);
