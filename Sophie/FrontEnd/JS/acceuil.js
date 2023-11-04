@@ -1,3 +1,4 @@
+console.log("refresh");
 import { creerFiltres, afficherWorks, modifierAffichage } from "./functions.js";
 let userConnected = false;
 let tokenFromStorage = localStorage.getItem("token");

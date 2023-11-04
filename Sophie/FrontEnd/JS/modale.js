@@ -78,27 +78,20 @@ if (userConnected == true) {
           img.src = works[i].imageUrl;
           img.setAttribute("id", works[i].id);
           btnDeleteWorks.setAttribute("id", works[i].id);
-          btnDeleteWorks.addEventListener("click", (event) => {
-            deleteWorks(event);
+          btnDeleteWorks.addEventListener("click", () => {
+            deleteWorks(works[i].id);
           });
         }
       });
   };
 
-  const deleteWorks = (event) => {
-    event.stopPropagation();
-    let id = event.target.id;
+  const deleteWorks = (id) => {
     fetch(`http://localhost:5678/api/works/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + tokenFromStorage, //pour les autorisation de l'api
         "Content-Type": "application/json;charset=utf-8",
       },
-    }).then((response) => {
-      if (response.ok) {
-        event.preventDefault();
-        alert("projet supprimé");
-      }
     });
   };
   const modaleAjoutProjet2 = () => {
@@ -187,7 +180,7 @@ if (userConnected == true) {
     divInputText.appendChild(labelText);
     const inputText = document.createElement("input");
     inputText.className = "modale-form-input";
-    inputText.setAttribute("type", "text");
+    inputText.type = "text";
     inputText.id = "title";
     inputText.name = "title";
     inputText.setAttribute("required", "");
@@ -214,7 +207,7 @@ if (userConnected == true) {
         let blankoption = document.createElement("option");
         blankoption.id = "0";
         blankoption.value = "";
-        blankoption.innerHTML = "";
+        blankoption.innerHTML = "Sélectionnez une option";
         inputSelect.appendChild(blankoption);
         for (let i = 0; i < categories.length; i++) {
           let option = document.createElement("option");
