@@ -18,7 +18,8 @@ export function creerFiltres(categories) {
   const zoneButtons = document.querySelector(".filtres");
   const buttonReset = document.createElement("button");
   buttonReset.innerText = "Tout";
-  buttonReset.setAttribute("id", "reset");
+  buttonReset.id = "reset";
+  buttonReset.classList.add("selected");
   zoneButtons.appendChild(buttonReset);
   for (let i = 0; i < categories.length; i++) {
     const buttonFilters = document.createElement("button");

@@ -76,8 +76,8 @@ if (userConnected == true) {
           modaleGallery.appendChild(divBtndelete);
           divBtndelete.appendChild(btnDeleteWorks);
           img.src = works[i].imageUrl;
-          img.setAttribute("id", works[i].id);
-          btnDeleteWorks.setAttribute("id", works[i].id);
+          img.id = works[i].id;
+          btnDeleteWorks.id = works[i].id;
           btnDeleteWorks.addEventListener("click", () => {
             deleteWorks(works[i].id);
           });
@@ -191,7 +191,7 @@ if (userConnected == true) {
     divInputSelect.classList.add("div-input-style");
     formModale.appendChild(divInputSelect);
     const labelSelect = document.createElement("label");
-    labelSelect.setAttribute("for", "select");
+    labelSelect.for = "select";
     labelSelect.innerText = "Catégorie";
     divInputSelect.appendChild(labelSelect);
     const inputSelect = document.createElement("select");
@@ -268,5 +268,3 @@ if (userConnected == true) {
     });
   };
 }
-
-//getelementbyclassname a ultiliser pour faire un tableau//
