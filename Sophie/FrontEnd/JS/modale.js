@@ -78,7 +78,8 @@ if (userConnected == true) {
           img.src = works[i].imageUrl;
           img.id = works[i].id;
           btnDeleteWorks.id = works[i].id;
-          btnDeleteWorks.addEventListener("click", () => {
+          btnDeleteWorks.addEventListener("click", (event) => {
+            event.preventDefault();
             deleteWorks(works[i].id);
           });
         }
@@ -243,6 +244,7 @@ if (userConnected == true) {
     });
     //validation du formulaire//
     btnValidation.addEventListener("click", (event) => {
+      event.preventDefault();
       let validationForm = new FormData(formModale);
       fetch("http://localhost:5678/api/works", {
         method: "POST",
@@ -250,8 +252,6 @@ if (userConnected == true) {
           Authorization: "Bearer " + tokenFromStorage, //pour les autorisation de l'api
         },
         body: validationForm,
-      }).then(() => {
-        event.preventDefault();
       });
       alert("projet ajouté");
     });
