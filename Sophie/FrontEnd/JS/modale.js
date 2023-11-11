@@ -1,3 +1,4 @@
+import { afficherWorks } from "./functions.js";
 let userConnected = false;
 let tokenFromStorage = localStorage.getItem("token");
 const isUserConnected = () => {
@@ -31,6 +32,7 @@ if (userConnected == true) {
   };
   const creerElementsModale1 = (modale) => {
     //titre//
+    modale.innerHTML = "";
     const modaleTitle = document.createElement("h3");
     modaleTitle.classList.add("modale-title");
     modaleTitle.innerHTML = "Galerie photo";
@@ -94,6 +96,8 @@ if (userConnected == true) {
         "Content-Type": "application/json;charset=utf-8",
       },
     });
+    alert("projet supprimé");
+    creerElementsModale1(modale);
   };
   const modaleAjoutProjet2 = () => {
     let modale = document.getElementById("modale");
@@ -121,6 +125,7 @@ if (userConnected == true) {
     modale.appendChild(modaleTitle2);
     //form//
     const formModale = document.createElement("form");
+    formModale.id = "form-modale";
     formModale.classList.add("form-modale");
     formModale.method = "POST";
     modale.appendChild(formModale);
@@ -254,11 +259,19 @@ if (userConnected == true) {
         body: validationForm,
       });
       alert("projet ajouté");
+      modaleAjoutProjet2();
     });
   };
   const closeModale = () => {
     const modaleBackground = document.getElementById("modale-back");
     document.body.removeChild(modaleBackground);
+    fetch("http://localhost:5678/api/works")
+      .then((works) => works.json())
+      .then((works) => {
+        const gallery = document.querySelector(".gallery");
+        gallery.innerHTML = "";
+        afficherWorks(works);
+      });
   };
 
   const backModale = (backArrow, modale) => {
