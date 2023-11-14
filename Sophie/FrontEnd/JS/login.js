@@ -5,7 +5,7 @@ let inputPassword = document.getElementById("password");
 const tokenFromStorage = localStorage.getItem("token");
 const checkToken = () => {
   if (tokenFromStorage) {
-    window.location.href = "./index.html";
+    window.location.href = "/";
   }
 };
 checkToken();
@@ -25,7 +25,7 @@ form.addEventListener("submit", (event) => {
   getUser.then((user) => {
     if (user?.token) {
       localStorage.setItem("token", user.token);
-      window.location.href = "./index.html";
+      window.location.href = "/";
     }
   });
 });

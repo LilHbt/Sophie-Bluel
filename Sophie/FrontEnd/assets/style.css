@@ -195,6 +195,7 @@ nav ul {
   list-style-type: none;
 }
 nav li {
+  cursor: pointer;
   padding: 0 10px;
   font-size: 1.2em;
 }
