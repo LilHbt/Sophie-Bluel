@@ -22,6 +22,7 @@ form.addEventListener("submit", (event) => {
       return response.json();
     }
   });
+  //ajouter le token au local storage//
   getUser.then((user) => {
     if (user?.token) {
       localStorage.setItem("token", user.token);
@@ -29,7 +30,7 @@ form.addEventListener("submit", (event) => {
     }
   });
 });
-//ajouter le token au local storage//
+
 async function connexion(login) {
   try {
     const response = await fetch("http://localhost:5678/api/users/login", {
