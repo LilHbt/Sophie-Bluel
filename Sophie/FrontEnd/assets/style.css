@@ -407,6 +407,9 @@ form a {
   top: 13%;
   right: 33%;
 }
+.btn-back-modale {
+  cursor: pointer;
+}
 .modale-gallery {
   display: flex;
   flex-wrap: wrap;
