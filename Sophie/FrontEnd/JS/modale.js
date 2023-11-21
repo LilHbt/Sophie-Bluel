@@ -229,6 +229,7 @@ if (userConnected == true) {
     btnValidation.id = "btn-valid-form-modale";
     btnValidation.type = "submit";
     btnValidation.setAttribute("disabled", "");
+    btnValidation.style.cursor = "default";
     btnValidation.innerText = "validation";
     formModale.appendChild(btnValidation);
     //ligne visuelle//
@@ -245,6 +246,7 @@ if (userConnected == true) {
         btnValidation.removeAttribute("disabled", "");
         btnValidation.removeAttribute("id", "btn-valid-form-modale");
         btnValidation.className = "selected";
+        btnValidation.style.cursor = "pointer";
       }
     });
     //validation du formulaire//
