@@ -50,15 +50,9 @@ inputEmail.addEventListener("change", (event) => {
   const valeurEmail = event.target.value;
   let regexp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+.[a-z0-9._-]+");
   let resultat = regexp.test(valeurEmail);
-  let zoneErreur = document.querySelector(".zone-erreur");
-  let erreur = document.createElement("p");
-  zoneErreur.appendChild(erreur);
   if (resultat == false) {
-    erreur.innerText = "E-mail invalide";
-    erreur.classList.add("error");
     inputEmail.classList.add("input-error");
   } else {
-    zoneErreur.innerHTML = "";
     inputEmail.classList.remove("input-error");
   }
 });
