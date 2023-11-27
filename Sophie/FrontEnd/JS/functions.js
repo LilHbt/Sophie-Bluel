@@ -73,6 +73,7 @@ export const modifierAffichage = () => {
   log.innerText = "logout";
   log.addEventListener("click", () => {
     localStorage.removeItem("token");
+    window.location.href = "/";
   });
   btnLogout.href = "/";
   //creation des nouveaux element visuel//
