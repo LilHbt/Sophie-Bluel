@@ -1,4 +1,5 @@
 import { afficherWorks } from "./functions.js";
+
 let userConnected = false;
 let tokenFromStorage = localStorage.getItem("token");
 const isUserConnected = () => {
@@ -38,8 +39,9 @@ if (userConnected == true) {
     modaleTitle.innerHTML = "Galerie photo";
     modale.appendChild(modaleTitle);
     //buton//
-    const btnCloseModale = document.createElement("i");
-    btnCloseModale.classList.add("fa-solid", "fa-xmark", "btn-close-modale");
+    const btnCloseModale = document.createElement("img");
+    btnCloseModale.classList.add("btn-close-modale");
+    btnCloseModale.src = "../assets/icons/xmark.png";
     btnCloseModale.addEventListener("click", closeModale);
     modale.appendChild(btnCloseModale);
 
@@ -67,12 +69,9 @@ if (userConnected == true) {
           const img = document.createElement("img");
           const divBtndelete = document.createElement("div");
           divBtndelete.classList.add("div-btn-delete");
-          const btnDeleteWorks = document.createElement("i");
-          btnDeleteWorks.classList.add(
-            "fa-solid",
-            "fa-trash-can",
-            "btn-delete-works"
-          );
+          const btnDeleteWorks = document.createElement("img");
+          btnDeleteWorks.classList.add("btn-delete-works");
+          btnDeleteWorks.src = "../assets/icons/deleteIcon.png";
           img.classList.add("img-gallery-modale");
           modaleGallery.appendChild(img);
           modaleGallery.appendChild(divBtndelete);
@@ -106,15 +105,17 @@ if (userConnected == true) {
     divMiseEnPage2.classList.add("mise-en-page-modale2");
     modale.appendChild(divMiseEnPage2);
     //buttons//
-    const backArrow = document.createElement("i");
-    backArrow.classList.add("fa-solid", "fa-arrow-left", "btn-back-modale");
+    const backArrow = document.createElement("img");
+    backArrow.classList.add("btn-back-modale");
+    backArrow.src = "../assets/icons/arrow-left.png";
     divMiseEnPage2.appendChild(backArrow);
     backModale(backArrow, modale);
 
     //2ieme boutton//
-    const btnCloseModale = document.createElement("i");
+    const btnCloseModale = document.createElement("img");
     btnCloseModale.id = "btn-close";
-    btnCloseModale.classList.add("fa-solid", "fa-xmark");
+    btnCloseModale.classList.add("btn-close-modale");
+    btnCloseModale.src = "../assets/icons/xmark.png";
     btnCloseModale.addEventListener("click", closeModale);
     divMiseEnPage2.appendChild(btnCloseModale);
 
